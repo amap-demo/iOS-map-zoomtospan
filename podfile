@@ -1,0 +1,7 @@
+target 'iOS-map-zoomtospan' do
+	pod 'AMap3DMap'
+end
+
+target 'iOS-map-zoomtospan-swift' do
+	pod 'AMap3DMap'
+end
