@@ -14,6 +14,7 @@
 {
     ///地图view
     MAMapView *_mapView;
+    NSMutableArray *_annotations;
 }
 
 @end
@@ -24,9 +25,14 @@
 {
     if ([annotation isKindOfClass:[MAPointAnnotation class]]) {
         static NSString *pointReuseIndetifier = @"pointReuseIndetifier";
-        MAPinAnnotationView *annotationView = [[MAPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pointReuseIndetifier];
         
-        annotationView.pinColor = [((MAPointAnnotation *)annotation).title isEqualToString:@"center"] ? MAPinAnnotationColorRed : MAPinAnnotationColorPurple;
+        MAPinAnnotationView *annotationView = (MAPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:pointReuseIndetifier];
+        
+        if (annotationView == nil) {
+            annotationView = [[MAPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pointReuseIndetifier];
+            
+            annotationView.pinColor = [((MAPointAnnotation *)annotation).title isEqualToString:@"center"] ? MAPinAnnotationColorRed : MAPinAnnotationColorPurple;
+        }
         
         return annotationView;
     }
@@ -45,11 +51,11 @@
     _mapView.centerCoordinate = centerPoint.coordinate;
     
     ///添加其他annotation
-    NSArray *annotations = [self annotations];
+    _annotations = [self annotations];
     
-    [_mapView addAnnotations:annotations];
+    [_mapView addAnnotations:_annotations];
     
-    [self showsAnnotations:annotations edgePadding:UIEdgeInsetsMake(40, 40, 40, 40) andMapView:_mapView];
+    [self showsAnnotations:_annotations edgePadding:UIEdgeInsetsMake(40, 40, 40, 40) andMapView:_mapView];
 }
 
 /**
@@ -109,7 +115,31 @@
     return annotations;
 }
 
+- (void)showAnnotationsNormal {
+    [_mapView showAnnotations:_annotations edgePadding:UIEdgeInsetsMake(40, 40, 40, 40) animated:YES];
+}
 
+- (void)showAnnotationsByMapCenter {
+    [self showsAnnotations:_annotations edgePadding:UIEdgeInsetsMake(40, 40, 40, 40) andMapView:_mapView];
+}
+
+- (void)initButton
+{
+    UIButton *button1=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button1.frame = CGRectMake(10, 50, 150,35);
+    button1.backgroundColor = [UIColor redColor];
+    [button1 setTitle:@"缩放地图（中心点）" forState:UIControlStateNormal];
+    [button1 addTarget:self action:@selector(showAnnotationsByMapCenter) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button1];
+    
+    UIButton *button2=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button2.frame = CGRectMake(10, 100,150,35);
+    button2.backgroundColor = [UIColor redColor];
+    [button2 setTitle:@"缩放地图" forState:UIControlStateNormal];
+    [button2 addTarget:self action:@selector(showAnnotationsNormal) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button2];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -122,6 +152,8 @@
     _mapView.delegate = self;
     
     [self.view addSubview:_mapView];
+    
+    [self initButton];
     
 }
 

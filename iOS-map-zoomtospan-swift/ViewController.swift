@@ -10,14 +10,20 @@ import UIKit
 
 class ViewController: UIViewController, MAMapViewDelegate {
     var _mapView:MAMapView!
-
+    var _annotations:Array<MAPointAnnotation>!
+    
     func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
         if annotation.isKind(of: MAPointAnnotation.self){
             let pointReuseIndetifier:String = "pointReuseIndetifier"
-            let annotationView:MAPinAnnotationView = MAPinAnnotationView(annotation: annotation, reuseIdentifier: pointReuseIndetifier)
             
-            let title:String = (annotation as! MAPointAnnotation).title
-            annotationView.pinColor = title == "center" ? .red : .purple
+            var annotationView:MAPinAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: pointReuseIndetifier) as? MAPinAnnotationView
+            
+            if annotationView == nil {
+                annotationView = MAPinAnnotationView(annotation: annotation, reuseIdentifier: pointReuseIndetifier)
+                
+                let title:String = (annotation as! MAPointAnnotation).title
+                annotationView?.pinColor = title == "center" ? .red : .purple
+            }
             
             return annotationView
         }
@@ -35,10 +41,10 @@ class ViewController: UIViewController, MAMapViewDelegate {
         _mapView.centerCoordinate = centerPoint.coordinate
         
         ///添加其他annotation
-        let annotations:Array<MAPointAnnotation> = getAnnotations()
-        _mapView.addAnnotations(annotations)
+        _annotations = getAnnotations()
+        _mapView.addAnnotations(_annotations)
         
-        showsAnnotations(annotations, edgePadding: UIEdgeInsetsMake(40, 40, 40, 40), andMapView: _mapView)
+        showsAnnotations(_annotations, edgePadding: UIEdgeInsetsMake(40, 40, 40, 40), andMapView: _mapView)
     }
     
     
@@ -95,6 +101,31 @@ class ViewController: UIViewController, MAMapViewDelegate {
         return annotations
     }
     
+    func showAnnotationsNormal() {
+        _mapView.showAnnotations(_annotations, edgePadding: UIEdgeInsetsMake(40, 40, 40, 40), animated: true)
+    }
+    
+    func showAnnotationsByMapCenter() {
+        showsAnnotations(_annotations, edgePadding: UIEdgeInsetsMake(40, 40, 40, 40), andMapView: _mapView)
+    }
+    
+    func initButton() {
+        let button1:UIButton = UIButton.init(type: .roundedRect)
+        button1.frame = CGRect(x: 10, y: 50, width: 150, height: 35)
+        button1.backgroundColor = UIColor.red
+        button1.setTitle("缩放地图（中心点）", for: .normal)
+        button1.addTarget(self, action: #selector(showAnnotationsByMapCenter), for: .touchUpInside)
+        view.addSubview(button1)
+        
+        let button2:UIButton = UIButton.init(type: .roundedRect)
+        button2.frame = CGRect(x: 10, y: 100, width: 150, height: 35)
+        button2.backgroundColor = UIColor.red
+        button2.setTitle("缩放地图", for: .normal)
+        button2.addTarget(self, action: #selector(showAnnotationsNormal), for: .touchUpInside)
+        view.addSubview(button2)
+        
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -109,6 +140,8 @@ class ViewController: UIViewController, MAMapViewDelegate {
         _mapView.delegate = self
         
         view.addSubview(_mapView)
+        
+        initButton()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
