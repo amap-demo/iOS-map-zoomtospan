@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19A9B77A1E2F56200054B977 /* iOS_map_zoomtospanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A9B7791E2F56200054B977 /* iOS_map_zoomtospanUITests.m */; };
 		19C9F3301E2DCD3A00949A6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C9F32F1E2DCD3A00949A6C /* main.m */; };
 		19C9F3331E2DCD3A00949A6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C9F3321E2DCD3A00949A6C /* AppDelegate.m */; };
 		19C9F3361E2DCD3A00949A6C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C9F3351E2DCD3A00949A6C /* ViewController.m */; };
@@ -22,8 +23,21 @@
 		F4189B3F85DA19A7A2AE4AA1 /* libPods-iOS-map-zoomtospan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 968AC21D172EC2EAFBA5601D /* libPods-iOS-map-zoomtospan.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		19A9B77C1E2F56200054B977 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19C9F3231E2DCD3A00949A6C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19C9F32A1E2DCD3A00949A6C;
+			remoteInfo = "iOS-map-zoomtospan";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		100CED05BEECDD83A8F39714 /* Pods-iOS-map-zoomtospan-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-map-zoomtospan-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-map-zoomtospan-swift/Pods-iOS-map-zoomtospan-swift.debug.xcconfig"; sourceTree = "<group>"; };
+		19A9B7771E2F56200054B977 /* iOS-map-zoomtospanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-map-zoomtospanUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		19A9B7791E2F56200054B977 /* iOS_map_zoomtospanUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_map_zoomtospanUITests.m; sourceTree = "<group>"; };
+		19A9B77B1E2F56200054B977 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19C9F32B1E2DCD3A00949A6C /* iOS-map-zoomtospan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-map-zoomtospan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C9F32F1E2DCD3A00949A6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		19C9F3311E2DCD3A00949A6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,6 +64,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		19A9B7741E2F56200054B977 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		19C9F3281E2DCD3A00949A6C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,11 +90,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19A9B7781E2F56200054B977 /* iOS-map-zoomtospanUITests */ = {
+			isa = PBXGroup;
+			children = (
+				19A9B7791E2F56200054B977 /* iOS_map_zoomtospanUITests.m */,
+				19A9B77B1E2F56200054B977 /* Info.plist */,
+			);
+			path = "iOS-map-zoomtospanUITests";
+			sourceTree = "<group>";
+		};
 		19C9F3221E2DCD3A00949A6C = {
 			isa = PBXGroup;
 			children = (
 				19C9F32D1E2DCD3A00949A6C /* iOS-map-zoomtospan */,
 				19C9F34A1E2E139300949A6C /* iOS-map-zoomtospan-swift */,
+				19A9B7781E2F56200054B977 /* iOS-map-zoomtospanUITests */,
 				19C9F32C1E2DCD3A00949A6C /* Products */,
 				2D55F09E79803BE23B781EC2 /* Pods */,
 				744C6E7A9CB73981EDD39021 /* Frameworks */,
@@ -85,6 +116,7 @@
 			children = (
 				19C9F32B1E2DCD3A00949A6C /* iOS-map-zoomtospan.app */,
 				19C9F3491E2E139300949A6C /* iOS-map-zoomtospan-swift.app */,
+				19A9B7771E2F56200054B977 /* iOS-map-zoomtospanUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,6 +182,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		19A9B7761E2F56200054B977 /* iOS-map-zoomtospanUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19A9B7801E2F56200054B977 /* Build configuration list for PBXNativeTarget "iOS-map-zoomtospanUITests" */;
+			buildPhases = (
+				19A9B7731E2F56200054B977 /* Sources */,
+				19A9B7741E2F56200054B977 /* Frameworks */,
+				19A9B7751E2F56200054B977 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19A9B77D1E2F56200054B977 /* PBXTargetDependency */,
+			);
+			name = "iOS-map-zoomtospanUITests";
+			productName = "iOS-map-zoomtospanUITests";
+			productReference = 19A9B7771E2F56200054B977 /* iOS-map-zoomtospanUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		19C9F32A1E2DCD3A00949A6C /* iOS-map-zoomtospan */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19C9F3421E2DCD3A00949A6C /* Build configuration list for PBXNativeTarget "iOS-map-zoomtospan" */;
@@ -200,6 +250,12 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Amap;
 				TargetAttributes = {
+					19A9B7761E2F56200054B977 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = YMJ372W38W;
+						ProvisioningStyle = Manual;
+						TestTargetID = 19C9F32A1E2DCD3A00949A6C;
+					};
 					19C9F32A1E2DCD3A00949A6C = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = YMJ372W38W;
@@ -227,11 +283,19 @@
 			targets = (
 				19C9F32A1E2DCD3A00949A6C /* iOS-map-zoomtospan */,
 				19C9F3481E2E139300949A6C /* iOS-map-zoomtospan-swift */,
+				19A9B7761E2F56200054B977 /* iOS-map-zoomtospanUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		19A9B7751E2F56200054B977 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		19C9F3291E2DCD3A00949A6C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,6 +412,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		19A9B7731E2F56200054B977 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19A9B77A1E2F56200054B977 /* iOS_map_zoomtospanUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		19C9F3271E2DCD3A00949A6C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -368,6 +440,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		19A9B77D1E2F56200054B977 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19C9F32A1E2DCD3A00949A6C /* iOS-map-zoomtospan */;
+			targetProxy = 19A9B77C1E2F56200054B977 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		19C9F3371E2DCD3A00949A6C /* Main.storyboard */ = {
@@ -405,6 +485,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		19A9B77E1E2F56200054B977 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = YMJ372W38W;
+				INFOPLIST_FILE = "iOS-map-zoomtospanUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.autonavi.iOS-map-zoomtospanUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "262ce89f-36c1-471e-b3aa-17585737754f";
+				PROVISIONING_PROFILE_SPECIFIER = openPlatform_development;
+				TEST_TARGET_NAME = "iOS-map-zoomtospan";
+			};
+			name = Debug;
+		};
+		19A9B77F1E2F56200054B977 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = YMJ372W38W;
+				INFOPLIST_FILE = "iOS-map-zoomtospanUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.autonavi.iOS-map-zoomtospanUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "262ce89f-36c1-471e-b3aa-17585737754f";
+				PROVISIONING_PROFILE_SPECIFIER = openPlatform_development;
+				TEST_TARGET_NAME = "iOS-map-zoomtospan";
+			};
+			name = Release;
+		};
 		19C9F3401E2DCD3A00949A6C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -567,6 +675,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		19A9B7801E2F56200054B977 /* Build configuration list for PBXNativeTarget "iOS-map-zoomtospanUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19A9B77E1E2F56200054B977 /* Debug */,
+				19A9B77F1E2F56200054B977 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		19C9F3261E2DCD3A00949A6C /* Build configuration list for PBXProject "iOS-map-zoomtospan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "19A9B7761E2F56200054B977"
+               BuildableName = "iOS-map-zoomtospanUITests.xctest"
+               BlueprintName = "iOS-map-zoomtospanUITests"
+               ReferencedContainer = "container:iOS-map-zoomtospan.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
