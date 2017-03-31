@@ -18,7 +18,6 @@ DerivedData
 xcuserdata
 
 ## Other
-*.lock
 *.xccheckout
 *.moved-aside
 *.xcuserstate
