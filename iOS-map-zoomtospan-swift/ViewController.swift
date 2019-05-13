@@ -101,11 +101,11 @@ class ViewController: UIViewController, MAMapViewDelegate {
         return annotations
     }
     
-    func showAnnotationsNormal() {
+    @objc func showAnnotationsNormal() {
         _mapView.showAnnotations(_annotations, edgePadding: UIEdgeInsetsMake(40, 40, 40, 40), animated: true)
     }
     
-    func showAnnotationsByMapCenter() {
+    @objc func showAnnotationsByMapCenter() {
         showsAnnotations(_annotations, edgePadding: UIEdgeInsetsMake(40, 40, 40, 40), andMapView: _mapView)
     }
     
